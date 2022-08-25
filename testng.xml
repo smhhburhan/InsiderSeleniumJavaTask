@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Insider Selenium Case">
+    <parameter name="browserName" value="Chrome"/>
+    <test name="Tests">
+        <classes>
+            <class name="tests.MainPageTest">
+                <methods>
+                    <include name="navigateUrl"/>
+                    <include name="checkUrl"/>
+                    <include name="acceptCookies"/>
+                    <include name="clickMoreMenu"/>
+                    <include name="clickCareerPage"/>
+                </methods>
+            </class>
+            <class name="tests.CareerPageTest">
+                <methods>
+                    <include name="checkLocations"/>
+                    <include name="checkLifeAtInsider"/>
+                    <include name="checkTeams"/>
+                    <include name="clickQualityAssurance"/>
+                </methods>
+            </class>
+            <class name="tests.QualityAssurancePageTest">
+                <methods>
+                    <include name="clickSeeAllQAJobs"/>
+                </methods>
+            </class>
+            <class name="tests.OpenPositionsPageTest">
+                <methods>
+                    <include name="filterByLocation"/>
+                    <include name="checkResults"/>
+                    <include name="clickApplyNow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
