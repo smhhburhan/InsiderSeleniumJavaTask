@@ -13,6 +13,8 @@ import utils.Driver;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class BasePage extends Driver {
     static JavascriptExecutor jse = (JavascriptExecutor) driver;
     static WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     static Actions actions = new Actions(driver);
+    static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("kk:mm:ss");
 
     public BasePage() {
 
@@ -28,7 +31,7 @@ public class BasePage extends Driver {
 
     }
 
-    public void click(WebElement element){
+    public void click(WebElement element) {
 
         centerElement(element);
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -73,10 +76,10 @@ public class BasePage extends Driver {
 
     }
 
-    public void getScreenshot(WebElement element) throws IOException {
+    public static void getScreenshot(String methodName) throws IOException {
 
-        File ss = element.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(ss, new File("./ScreenShots/" + element.getText() + ".png"));
+        File ss = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(ss, new File("ScreenShots/" + methodName + "-" + formatter.format(LocalTime.now()) + ".png"));
 
     }
 
@@ -120,7 +123,6 @@ public class BasePage extends Driver {
             Thread.sleep(milliSeconds);
 
         } catch (InterruptedException e) {
-
         }
 
     }

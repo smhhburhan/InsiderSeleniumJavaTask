@@ -2,10 +2,12 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.MainPage;
 
+@Listeners(utils.listener.TestNGListener.class)
 public class MainPageTest {
 
     BasePage basePage;

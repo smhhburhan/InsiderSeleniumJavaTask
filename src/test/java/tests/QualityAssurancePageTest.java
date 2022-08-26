@@ -1,12 +1,13 @@
 package tests;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.QualityAssurancePage;
-import utils.Driver;
 
-public class QualityAssurancePageTest extends Driver{
+@Listeners(utils.listener.TestNGListener.class)
+public class QualityAssurancePageTest {
 
     BasePage basePage;
     QualityAssurancePage qualityAssurancePage;

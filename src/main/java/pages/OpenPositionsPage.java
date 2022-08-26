@@ -2,10 +2,9 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
-public class OpenPositionsPage extends BasePage{
+public class OpenPositionsPage extends BasePage {
 
     @FindBy(xpath = "//span[@id='select2-filter-by-location-container']")
     public WebElement filterByLocation;
