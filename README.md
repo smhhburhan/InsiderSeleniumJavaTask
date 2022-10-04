@@ -1,4 +1,4 @@
-# InsiderSeleniumJavaTask
+# SeleniumJavaTask
 
 # Requirments&Conditions
 - Test case should be written using any programming language and framework (Python or Java + Selenium would be preferable)
